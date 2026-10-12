@@ -1,0 +1,1088 @@
+/* =====================================================
+   SHOPLEDGER
+   File: dashboard.css
+   Purpose: Dashboard Styling
+   Author: Mark Otu
+====================================================== */
+
+
+/* =====================================================
+   DASHBOARD LAYOUT
+====================================================== */
+
+.dashboard{
+
+    display:flex;
+
+    min-height:100vh;
+
+    background:#F8FAFC;
+
+}
+
+
+/* =====================================================
+   SIDEBAR
+====================================================== */
+
+.sidebar{
+
+    width:280px;
+
+    background:linear-gradient(180deg,#1D4ED8,#2563EB);
+
+    color:#FFFFFF;
+
+    display:flex;
+
+    flex-direction:column;
+
+    justify-content:space-between;
+
+    padding:30px 0;
+
+    position:fixed;
+
+    left:0;
+
+    top:0;
+
+    bottom:0;
+
+    box-shadow:8px 0 30px rgba(15,23,42,.10);
+
+}
+
+
+/* =====================================================
+   LOGO
+====================================================== */
+
+.sidebar-logo{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:15px;
+
+    padding:0 30px 40px;
+
+    border-bottom:1px solid rgba(255,255,255,.15);
+
+}
+
+.sidebar-logo i{
+
+    font-size:34px;
+
+}
+
+.sidebar-logo h2{
+
+    font-size:30px;
+
+    font-weight:700;
+
+}
+
+
+/* =====================================================
+   NAVIGATION
+====================================================== */
+
+.sidebar-nav{
+
+    flex:1;
+
+    margin-top:40px;
+
+}
+
+.sidebar-nav ul{
+
+    list-style:none;
+
+}
+
+.sidebar-nav li{
+
+    margin:8px 20px;
+
+}
+
+.sidebar-nav a{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:18px;
+
+    padding:16px 20px;
+
+    color:#FFFFFF;
+
+    text-decoration:none;
+
+    border-radius:16px;
+
+    transition:var(--transition);
+
+    font-weight:500;
+
+}
+
+.sidebar-nav a:hover{
+
+    background:rgba(255,255,255,.15);
+
+}
+
+.sidebar-nav li.active a{
+
+    background:#FFFFFF;
+
+    color:#2563EB;
+
+    font-weight:600;
+
+}
+
+.sidebar-nav i{
+
+    width:24px;
+
+    text-align:center;
+
+}
+
+
+/* =====================================================
+   SIDEBAR FOOTER
+====================================================== */
+
+.sidebar-footer{
+
+    padding:25px;
+
+}
+
+.sidebar-footer a{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:15px;
+
+    padding:16px 20px;
+
+    color:#FFFFFF;
+
+    text-decoration:none;
+
+    border-radius:16px;
+
+    transition:var(--transition);
+
+}
+
+.sidebar-footer a:hover{
+
+    background:rgba(255,255,255,.15);
+
+}
+
+
+/* =====================================================
+   MAIN CONTENT
+====================================================== */
+
+.dashboard-content{
+
+    margin-left:280px;
+
+    width:calc(100% - 280px);
+
+    padding:35px;
+
+}
+
+/* =====================================================
+   TOP NAVIGATION
+====================================================== */
+
+.topbar{
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+    margin-bottom:40px;
+
+    gap:30px;
+
+}
+
+.topbar-left{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:25px;
+
+}
+
+.menu-toggle{
+
+    display:none;
+
+    width:50px;
+
+    height:50px;
+
+    border:none;
+
+    border-radius:12px;
+
+    background:#FFFFFF;
+
+    cursor:pointer;
+
+    box-shadow:0 10px 25px rgba(15,23,42,.08);
+
+    font-size:20px;
+
+}
+
+.welcome h1{
+
+    font-size:32px;
+
+    color:var(--secondary);
+
+    margin-bottom:8px;
+
+}
+
+.welcome h1 span{
+
+    color:var(--primary);
+
+}
+
+.welcome p{
+
+    color:var(--gray);
+
+}
+
+
+/* =====================================================
+   TOPBAR RIGHT
+====================================================== */
+
+.topbar-right{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:20px;
+
+}
+
+.search-box{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:15px;
+
+    width:380px;
+
+    background:#FFFFFF;
+
+    padding:15px 20px;
+
+    border-radius:16px;
+
+    box-shadow:0 10px 30px rgba(15,23,42,.06);
+
+}
+
+.search-box i{
+
+    color:var(--gray);
+
+}
+
+.search-box input{
+
+    width:100%;
+
+    border:none;
+
+    outline:none;
+
+    font-size:15px;
+
+    background:transparent;
+
+}
+
+
+/* =====================================================
+   NOTIFICATION BUTTON
+====================================================== */
+
+.notification-btn{
+
+    position:relative;
+
+    width:55px;
+
+    height:55px;
+
+    border:none;
+
+    border-radius:16px;
+
+    background:#FFFFFF;
+
+    cursor:pointer;
+
+    box-shadow:0 10px 30px rgba(15,23,42,.06);
+
+    transition:var(--transition);
+
+}
+
+.notification-btn:hover{
+
+    transform:translateY(-3px);
+
+}
+
+.notification-btn i{
+
+    font-size:20px;
+
+    color:var(--secondary);
+
+}
+
+.notification-count{
+
+    position:absolute;
+
+    top:8px;
+
+    right:8px;
+
+    width:20px;
+
+    height:20px;
+
+    background:#EF4444;
+
+    color:#FFFFFF;
+
+    border-radius:50%;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    font-size:11px;
+
+    font-weight:600;
+
+}
+
+
+/* =====================================================
+   PROFILE CARD
+====================================================== */
+
+.profile-card{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:15px;
+
+    padding:10px 18px;
+
+    background:#FFFFFF;
+
+    border-radius:18px;
+
+    box-shadow:0 10px 30px rgba(15,23,42,.06);
+
+    cursor:pointer;
+
+    transition:var(--transition);
+
+}
+
+.profile-card:hover{
+
+    transform:translateY(-3px);
+
+}
+
+.profile-card img{
+
+    width:50px;
+
+    height:50px;
+
+    border-radius:50%;
+
+    object-fit:cover;
+
+}
+
+.profile-card h4{
+
+    color:var(--secondary);
+
+    font-size:16px;
+
+    margin-bottom:3px;
+
+}
+
+.profile-card span{
+
+    font-size:13px;
+
+    color:var(--gray);
+
+}
+
+
+/* =====================================================
+   KPI CARDS
+====================================================== */
+
+.stats-grid{
+
+    display:grid;
+
+    grid-template-columns:repeat(auto-fit,minmax(240px,1fr));
+
+    gap:25px;
+
+    margin-bottom:40px;
+
+}
+
+.stat-card{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:20px;
+
+    background:#FFFFFF;
+
+    padding:28px;
+
+    border-radius:22px;
+
+    box-shadow:0 15px 35px rgba(15,23,42,.06);
+
+    transition:var(--transition);
+
+}
+
+.stat-card:hover{
+
+    transform:translateY(-8px);
+
+    box-shadow:0 20px 45px rgba(15,23,42,.10);
+
+}
+
+.stat-icon{
+
+    width:70px;
+
+    height:70px;
+
+    border-radius:18px;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    font-size:28px;
+
+    color:#FFFFFF;
+
+}
+
+.stat-icon.revenue{
+
+    background:linear-gradient(135deg,#10B981,#059669);
+
+}
+
+.stat-icon.sales{
+
+    background:linear-gradient(135deg,#3B82F6,#2563EB);
+
+}
+
+.stat-icon.inventory{
+
+    background:linear-gradient(135deg,#F59E0B,#D97706);
+
+}
+
+.stat-icon.profit{
+
+    background:linear-gradient(135deg,#8B5CF6,#7C3AED);
+
+}
+
+.stat-details{
+
+    flex:1;
+
+}
+
+.stat-details span{
+
+    display:block;
+
+    color:var(--gray);
+
+    margin-bottom:8px;
+
+}
+
+.stat-details h2{
+
+    font-size:30px;
+
+    color:var(--secondary);
+
+    margin-bottom:8px;
+
+}
+
+.positive{
+
+    color:#10B981;
+
+    font-weight:600;
+
+}
+
+.neutral{
+
+    color:#64748B;
+
+    font-weight:500;
+
+}
+
+
+/* =====================================================
+   DASHBOARD CONTENT GRID
+====================================================== */
+
+.dashboard-grid{
+
+    display:grid;
+
+    grid-template-columns:2fr 1fr;
+
+    gap:25px;
+
+    margin-bottom:30px;
+
+}
+
+
+/* =====================================================
+   DASHBOARD CARDS
+====================================================== */
+
+.dashboard-card{
+
+    background:#FFFFFF;
+
+    border-radius:22px;
+
+    padding:28px;
+
+    box-shadow:0 15px 35px rgba(15,23,42,.06);
+
+    margin-bottom:30px;
+
+}
+
+.card-header{
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+    margin-bottom:25px;
+
+}
+
+.card-header h2{
+
+    color:var(--secondary);
+
+    font-size:22px;
+
+    font-weight:600;
+
+}
+
+.card-button{
+
+    border:none;
+
+    background:var(--primary);
+
+    color:#FFFFFF;
+
+    padding:10px 18px;
+
+    border-radius:12px;
+
+    cursor:pointer;
+
+    transition:var(--transition);
+
+}
+
+.card-button:hover{
+
+    transform:translateY(-2px);
+
+}
+
+
+/* =====================================================
+   SALES CHART
+====================================================== */
+
+.chart-card{
+
+    min-height:420px;
+
+}
+
+.chart-card canvas{
+
+    width:100%;
+
+    height:320px;
+
+}
+
+
+/* =====================================================
+   LOW STOCK
+====================================================== */
+
+.stock-list{
+
+    display:flex;
+
+    flex-direction:column;
+
+    gap:18px;
+
+}
+
+.stock-item{
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+    padding:15px;
+
+    border-radius:14px;
+
+    background:#F8FAFC;
+
+}
+
+.danger{
+
+    color:#EF4444;
+
+    font-weight:700;
+
+}
+
+.warning{
+
+    color:#F59E0B;
+
+    font-weight:700;
+
+}
+
+
+/* =====================================================
+   SALES TABLE
+====================================================== */
+
+.sales-table{
+
+    width:100%;
+
+    border-collapse:collapse;
+
+}
+
+.sales-table th{
+
+    text-align:left;
+
+    padding:18px;
+
+    background:#F8FAFC;
+
+    color:var(--secondary);
+
+}
+
+.sales-table td{
+
+    padding:18px;
+
+    border-bottom:1px solid #E2E8F0;
+
+}
+
+.status{
+
+    padding:6px 14px;
+
+    border-radius:30px;
+
+    font-size:13px;
+
+    font-weight:600;
+
+}
+
+.status.paid{
+
+    background:#DCFCE7;
+
+    color:#15803D;
+
+}
+
+.status.pending{
+
+    background:#FEF3C7;
+
+    color:#B45309;
+
+}
+
+
+/* =====================================================
+   QUICK ACTIONS
+====================================================== */
+
+.quick-actions{
+
+    display:grid;
+
+    grid-template-columns:repeat(2,1fr);
+
+    gap:18px;
+
+}
+
+.quick-actions button{
+
+    border:none;
+
+    padding:20px;
+
+    border-radius:16px;
+
+    background:linear-gradient(135deg,#2563EB,#1D4ED8);
+
+    color:#FFFFFF;
+
+    cursor:pointer;
+
+    font-size:15px;
+
+    font-weight:600;
+
+    transition:var(--transition);
+
+}
+
+.quick-actions button:hover{
+
+    transform:translateY(-5px);
+
+}
+
+.quick-actions i{
+
+    display:block;
+
+    font-size:24px;
+
+    margin-bottom:12px;
+
+}
+
+
+/* =====================================================
+   RECENT ACTIVITY
+====================================================== */
+
+.activity-list{
+
+    display:flex;
+
+    flex-direction:column;
+
+    gap:22px;
+
+}
+
+.activity-item{
+
+    display:grid;
+
+    grid-template-columns:40px 1fr auto;
+
+    gap:15px;
+
+    align-items:center;
+
+}
+
+.activity-item i{
+
+    font-size:22px;
+
+}
+
+.activity-item h4{
+
+    margin-bottom:6px;
+
+    color:var(--secondary);
+
+}
+
+.activity-item p{
+
+    color:var(--gray);
+
+    font-size:14px;
+
+}
+
+.activity-item span{
+
+    font-size:13px;
+
+    color:var(--gray);
+
+}
+
+.activity-success{
+
+    color:#22C55E;
+
+}
+
+.activity-warning{
+
+    color:#F59E0B;
+
+}
+
+.activity-primary{
+
+    color:#2563EB;
+
+}
+
+
+/* =====================================================
+   CALENDAR
+====================================================== */
+
+.calendar-widget{
+
+    text-align:center;
+
+    padding:35px 15px;
+
+}
+
+.calendar-widget i{
+
+    font-size:60px;
+
+    color:var(--primary);
+
+    margin-bottom:20px;
+
+}
+
+.calendar-widget h3{
+
+    font-size:28px;
+
+    color:var(--secondary);
+
+    margin-bottom:12px;
+
+}
+
+.calendar-widget p{
+
+    color:var(--gray);
+
+    line-height:1.6;
+
+}
+
+
+/* =====================================================
+   FOOTER
+====================================================== */
+
+.dashboard-footer{
+
+    text-align:center;
+
+    padding:20px 0;
+
+    color:var(--gray);
+
+    font-size:14px;
+
+}
+
+
+/* =====================================================
+   RESPONSIVE DESIGN
+====================================================== */
+
+@media (max-width:1100px){
+
+    .dashboard-grid{
+
+        grid-template-columns:1fr;
+
+    }
+
+}
+
+@media (max-width:900px){
+
+    .sidebar{
+
+        transform:translateX(-100%);
+
+    }
+
+    .dashboard-content{
+
+        margin-left:0;
+
+        width:100%;
+
+    }
+
+    .menu-toggle{
+
+        display:block;
+
+    }
+
+    .topbar{
+
+        flex-direction:column;
+
+        align-items:flex-start;
+
+    }
+
+    .topbar-right{
+
+        width:100%;
+
+        flex-wrap:wrap;
+
+    }
+
+    .search-box{
+
+        width:100%;
+
+    }
+
+}
+
+@media (max-width:600px){
+
+    .stats-grid{
+
+        grid-template-columns:1fr;
+
+    }
+
+    .quick-actions{
+
+        grid-template-columns:1fr;
+
+    }
+
+    .sales-table{
+
+        display:block;
+
+        overflow-x:auto;
+
+    }
+
+}
+
+.show-sidebar{
+
+    transform:translateX(0) !important;
+
+}

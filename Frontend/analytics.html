@@ -1,0 +1,672 @@
+<!DOCTYPE html>
+
+<!--
+====================================================
+SHOPLEDGER
+File: analytics.html
+Purpose: Analytics Dashboard
+Author: Mark Otu
+====================================================
+-->
+
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta
+name="viewport"
+content="width=device-width, initial-scale=1.0">
+
+<title>
+
+Analytics | ShopLedger
+
+</title>
+
+<!-- Google Fonts -->
+
+<link
+rel="preconnect"
+href="https://fonts.googleapis.com">
+
+<link
+rel="preconnect"
+href="https://fonts.gstatic.com"
+crossorigin>
+
+<link
+href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap"
+rel="stylesheet">
+
+<!-- Font Awesome -->
+
+<link
+rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+
+<!-- Global CSS -->
+
+<link
+rel="stylesheet"
+href="Assets/css/style.css">
+
+<link
+rel="stylesheet"
+href="Assets/css/dashboard.css">
+
+<link
+rel="stylesheet"
+href="Assets/css/analytics.css">
+
+<!-- Chart.js -->
+
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+</head>
+
+<body>
+
+<div class="dashboard">
+
+<!-- Sidebar -->
+
+<aside class="sidebar">
+
+<div class="sidebar-logo">
+
+<i class="fa-solid fa-store"></i>
+
+<h2>ShopLedger</h2>
+
+</div>
+
+<nav class="sidebar-nav">
+
+<ul>
+
+<li>
+
+<a href="dashboard.html">
+
+<i class="fa-solid fa-house"></i>
+
+<span>Dashboard</span>
+
+</a>
+
+</li>
+
+<li>
+
+<a href="inventory.html">
+
+<i class="fa-solid fa-boxes-stacked"></i>
+
+<span>Inventory</span>
+
+</a>
+
+</li>
+
+<li>
+
+<a href="sales.html">
+
+<i class="fa-solid fa-cart-shopping"></i>
+
+<span>Sales</span>
+
+</a>
+
+</li>
+
+<li>
+
+<a href="customers.html">
+
+<i class="fa-solid fa-users"></i>
+
+<span>Customers</span>
+
+</a>
+
+</li>
+
+<li class="active">
+
+<a href="analytics.html">
+
+<i class="fa-solid fa-chart-line"></i>
+
+<span>Analytics</span>
+
+</a>
+
+</li>
+
+<li>
+
+<a href="reports.html">
+
+<i class="fa-solid fa-file-lines"></i>
+
+<span>Reports</span>
+
+</a>
+
+</li>
+
+<li>
+
+<a href="#">
+
+<i class="fa-solid fa-gear"></i>
+
+<span>Settings</span>
+
+</a>
+
+</li>
+
+</ul>
+
+</nav>
+
+<div class="sidebar-footer">
+
+<a href="index.html">
+
+<i class="fa-solid fa-right-from-bracket"></i>
+
+<span>Logout</span>
+
+</a>
+
+</div>
+
+</aside>
+
+<!-- Main Content -->
+
+<main class="dashboard-content">
+
+<header class="topbar">
+
+<div class="topbar-left">
+
+<button
+class="menu-toggle"
+id="menuToggle">
+
+<i class="fa-solid fa-bars"></i>
+
+</button>
+
+<div class="welcome">
+
+<h1>
+
+Analytics Dashboard
+
+</h1>
+
+<p>
+
+Monitor business performance in real time.
+
+</p>
+
+</div>
+
+</div>
+
+<div class="topbar-right">
+
+<div class="search-box">
+
+<i class="fa-solid fa-magnifying-glass"></i>
+
+<input
+type="text"
+id="analyticsSearch"
+placeholder="Search analytics...">
+
+</div>
+
+</div>
+
+</header>
+
+<section class="dashboard-body">
+
+    <!-- ==========================================
+     KPI STATISTICS
+========================================== -->
+
+<section class="stats-grid">
+
+    <div class="stat-card">
+
+        <div class="stat-icon revenue">
+
+            <i class="fa-solid fa-sack-dollar"></i>
+
+        </div>
+
+        <div class="stat-details">
+
+            <span>Total Revenue</span>
+
+            <h2 id="totalRevenue">₦0</h2>
+
+            <p class="positive">
+
+                <i class="fa-solid fa-arrow-trend-up"></i>
+
+                Revenue generated
+
+            </p>
+
+        </div>
+
+    </div>
+
+    <div class="stat-card">
+
+        <div class="stat-icon sales">
+
+            <i class="fa-solid fa-cart-shopping"></i>
+
+        </div>
+
+        <div class="stat-details">
+
+            <span>Total Sales</span>
+
+            <h2 id="totalSales">0</h2>
+
+            <p class="neutral">
+
+                Completed transactions
+
+            </p>
+
+        </div>
+
+    </div>
+
+    <div class="stat-card">
+
+        <div class="stat-icon inventory">
+
+            <i class="fa-solid fa-boxes-stacked"></i>
+
+        </div>
+
+        <div class="stat-details">
+
+            <span>Inventory Value</span>
+
+            <h2 id="inventoryValue">₦0</h2>
+
+            <p class="neutral">
+
+                Current stock value
+
+            </p>
+
+        </div>
+
+    </div>
+
+    <div class="stat-card">
+
+        <div class="stat-icon customers">
+
+            <i class="fa-solid fa-users"></i>
+
+        </div>
+
+        <div class="stat-details">
+
+            <span>Total Customers</span>
+
+            <h2 id="totalCustomers">0</h2>
+
+            <p class="neutral">
+
+                Registered customers
+
+            </p>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- ==========================================
+     CHARTS ROW 1
+========================================== -->
+
+<section class="charts-grid">
+
+    <div class="dashboard-card">
+
+        <div class="card-header">
+
+            <h2>
+
+                Monthly Sales Trend
+
+            </h2>
+
+        </div>
+
+        <canvas id="salesChart"></canvas>
+
+    </div>
+
+    <div class="dashboard-card">
+
+        <div class="card-header">
+
+            <h2>
+
+                Sales by Category
+
+            </h2>
+
+        </div>
+
+        <canvas id="categoryChart"></canvas>
+
+    </div>
+
+</section>
+
+
+
+<!-- ==========================================
+     CHARTS ROW 2
+========================================== -->
+
+<section class="charts-grid">
+
+    <div class="dashboard-card">
+
+        <div class="card-header">
+
+            <h2>
+
+                Inventory Levels
+
+            </h2>
+
+        </div>
+
+        <canvas id="inventoryChart"></canvas>
+
+    </div>
+
+    <div class="dashboard-card">
+
+        <div class="card-header">
+
+            <h2>
+
+                Customer Growth
+
+            </h2>
+
+        </div>
+
+        <canvas id="customerChart"></canvas>
+
+    </div>
+
+</section>
+
+<!-- ==========================================
+     TOP SELLING PRODUCTS
+========================================== -->
+
+<section class="dashboard-card">
+
+    <div class="card-header">
+
+        <h2>
+
+            Top Selling Products
+
+        </h2>
+
+    </div>
+
+    <table class="analytics-table">
+
+        <thead>
+
+            <tr>
+
+                <th>Product</th>
+
+                <th>Category</th>
+
+                <th>Units Sold</th>
+
+                <th>Revenue</th>
+
+            </tr>
+
+        </thead>
+
+        <tbody id="topProductsBody">
+
+            <tr>
+
+                <td>Sample Product</td>
+
+                <td>General</td>
+
+                <td>150</td>
+
+                <td>₦120,000</td>
+
+            </tr>
+
+        </tbody>
+
+    </table>
+
+</section>
+
+
+
+<!-- ==========================================
+     LOW STOCK PRODUCTS
+========================================== -->
+
+<section class="dashboard-card">
+
+    <div class="card-header">
+
+        <h2>
+
+            Low Stock Products
+
+        </h2>
+
+    </div>
+
+    <table class="analytics-table">
+
+        <thead>
+
+            <tr>
+
+                <th>Product</th>
+
+                <th>Category</th>
+
+                <th>Stock Left</th>
+
+                <th>Status</th>
+
+            </tr>
+
+        </thead>
+
+        <tbody id="lowStockBody">
+
+            <tr>
+
+                <td>Sample Product</td>
+
+                <td>General</td>
+
+                <td>8</td>
+
+                <td>
+
+                    <span class="status pending">
+
+                        Low Stock
+
+                    </span>
+
+                </td>
+
+            </tr>
+
+        </tbody>
+
+    </table>
+
+</section>
+
+
+
+<!-- ==========================================
+     BUSINESS INSIGHTS
+========================================== -->
+
+<section class="dashboard-card">
+
+    <div class="card-header">
+
+        <h2>
+
+            Business Insights
+
+        </h2>
+
+    </div>
+
+    <div class="summary-grid">
+
+        <div class="summary-item">
+
+            <i class="fa-solid fa-fire"></i>
+
+            <div>
+
+                <h4>
+
+                    Best Selling Product
+
+                </h4>
+
+                <p id="bestSellingProduct">
+
+                    Sample Product generated from sales analysis.
+
+                </p>
+
+            </div>
+
+        </div>
+
+        <div class="summary-item">
+
+            <i class="fa-solid fa-triangle-exclamation"></i>
+
+            <div>
+
+                <h4>
+
+                    Inventory Alert
+
+                </h4>
+
+                <p id="inventoryAlert">
+
+                    Monitor products that are approaching low stock levels.
+
+                </p>
+
+            </div>
+
+        </div>
+
+        <div class="summary-item">
+
+            <i class="fa-solid fa-chart-column"></i>
+
+            <div>
+
+                <h4>
+
+                    Sales Performance
+
+                </h4>
+
+                <p id="salesInsight">
+
+                    Monthly performance insights will appear here.
+
+                </p>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+<!-- ==========================================
+     Footer
+========================================== -->
+
+<footer class="dashboard-footer">
+
+    <p>
+
+        © 2026 ShopLedger. All Rights Reserved.
+
+    </p>
+
+</footer>
+
+</section>
+
+</main>
+
+</div>
+
+
+
+<!-- ==========================================
+     Analytics JavaScript
+========================================== -->
+
+<script src="Assets/js/analytics.js"></script>
+
+</body>
+
+</html>

@@ -1,0 +1,824 @@
+<!DOCTYPE html>
+
+<!--
+====================================================
+SHOPLEDGER
+File: settings.html
+Purpose: Application Settings
+Author: Mark Otu
+====================================================
+-->
+
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta
+name="viewport"
+content="width=device-width, initial-scale=1.0">
+
+<title>
+
+Settings | ShopLedger
+
+</title>
+
+<!-- Google Fonts -->
+
+<link
+rel="preconnect"
+href="https://fonts.googleapis.com">
+
+<link
+rel="preconnect"
+href="https://fonts.gstatic.com"
+crossorigin>
+
+<link
+href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap"
+rel="stylesheet">
+
+<!-- Font Awesome -->
+
+<link
+rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+
+<!-- Global Styles -->
+
+<link
+rel="stylesheet"
+href="Assets/css/style.css">
+
+<link
+rel="stylesheet"
+href="Assets/css/dashboard.css">
+
+<link
+rel="stylesheet"
+href="Assets/css/settings.css">
+
+</head>
+
+<body>
+
+<div class="dashboard">
+
+<!-- Sidebar -->
+
+<aside class="sidebar">
+
+<div class="sidebar-logo">
+
+<i class="fa-solid fa-store"></i>
+
+<h2>
+
+ShopLedger
+
+</h2>
+
+</div>
+
+<nav class="sidebar-nav">
+
+<ul>
+
+<li>
+
+<a href="dashboard.html">
+
+<i class="fa-solid fa-house"></i>
+
+<span>
+
+Dashboard
+
+</span>
+
+</a>
+
+</li>
+
+<li>
+
+<a href="inventory.html">
+
+<i class="fa-solid fa-boxes-stacked"></i>
+
+<span>
+
+Inventory
+
+</span>
+
+</a>
+
+</li>
+
+<li>
+
+<a href="sales.html">
+
+<i class="fa-solid fa-cart-shopping"></i>
+
+<span>
+
+Sales
+
+</span>
+
+</a>
+
+</li>
+
+<li>
+
+<a href="customers.html">
+
+<i class="fa-solid fa-users"></i>
+
+<span>
+
+Customers
+
+</span>
+
+</a>
+
+</li>
+
+<li>
+
+<a href="analytics.html">
+
+<i class="fa-solid fa-chart-line"></i>
+
+<span>
+
+Analytics
+
+</span>
+
+</a>
+
+</li>
+
+<li>
+
+<a href="reports.html">
+
+<i class="fa-solid fa-file-lines"></i>
+
+<span>
+
+Reports
+
+</span>
+
+</a>
+
+</li>
+
+<li class="active">
+
+<a href="settings.html">
+
+<i class="fa-solid fa-gear"></i>
+
+<span>
+
+Settings
+
+</span>
+
+</a>
+
+</li>
+
+</ul>
+
+</nav>
+
+<div class="sidebar-footer">
+
+<a href="index.html">
+
+<i class="fa-solid fa-right-from-bracket"></i>
+
+<span>
+
+Logout
+
+</span>
+
+</a>
+
+</div>
+
+</aside>
+
+<!-- Main Content -->
+
+<main class="dashboard-content">
+
+<header class="topbar">
+
+<div class="topbar-left">
+
+<button
+class="menu-toggle"
+id="menuToggle">
+
+<i class="fa-solid fa-bars"></i>
+
+</button>
+
+<div class="welcome">
+
+<h1>
+
+Settings
+
+</h1>
+
+<p>
+
+Manage your account, business preferences and application settings.
+
+</p>
+
+</div>
+
+</div>
+
+</header>
+
+<section class="dashboard-body">
+
+    <!-- ==========================================
+     USER PROFILE
+========================================== -->
+
+<section class="settings-section">
+
+    <div class="settings-card">
+
+        <div class="card-header">
+
+            <h2>
+
+                User Profile
+
+            </h2>
+
+        </div>
+
+        <div class="profile-container">
+
+            <div class="profile-image">
+
+                <img
+                src="Assets/images/profile.png"
+                alt="Profile Picture"
+                id="profilePreview">
+
+                <button
+                type="button"
+                class="upload-btn">
+
+                    <i class="fa-solid fa-camera"></i>
+
+                    Change Photo
+
+                </button>
+
+                <input
+                type="file"
+                id="profileImage"
+                accept="image/*"
+                hidden>
+
+            </div>
+
+            <div class="profile-form">
+
+                <div class="form-group">
+
+                    <label for="fullName">
+
+                        Full Name
+
+                    </label>
+
+                    <input
+                    type="text"
+                    id="fullName"
+                    placeholder="Enter your full name">
+
+                </div>
+
+                <div class="form-group">
+
+                    <label for="email">
+
+                        Email Address
+
+                    </label>
+
+                    <input
+                    type="email"
+                    id="email"
+                    placeholder="Enter your email">
+
+                </div>
+
+                <div class="form-group">
+
+                    <label for="password">
+
+                        New Password
+
+                    </label>
+
+                    <input
+                    type="password"
+                    id="password"
+                    placeholder="Enter new password">
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- ==========================================
+     BUSINESS INFORMATION
+========================================== -->
+
+<section class="settings-section">
+
+    <div class="settings-card">
+
+        <div class="card-header">
+
+            <h2>
+
+                Business Information
+
+            </h2>
+
+        </div>
+
+        <div class="settings-grid">
+
+            <div class="form-group">
+
+                <label for="businessName">
+
+                    Business Name
+
+                </label>
+
+                <input
+                type="text"
+                id="businessName"
+                placeholder="Enter business name">
+
+            </div>
+
+            <div class="form-group">
+
+                <label for="businessPhone">
+
+                    Business Phone
+
+                </label>
+
+                <input
+                type="tel"
+                id="businessPhone"
+                placeholder="Enter phone number">
+
+            </div>
+
+            <div class="form-group">
+
+                <label for="businessEmail">
+
+                    Business Email
+
+                </label>
+
+                <input
+                type="email"
+                id="businessEmail"
+                placeholder="Enter business email">
+
+            </div>
+
+            <div class="form-group">
+
+                <label for="businessAddress">
+
+                    Business Address
+
+                </label>
+
+                <textarea
+                id="businessAddress"
+                rows="4"
+                placeholder="Enter business address"></textarea>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+<!-- ==========================================
+     APPEARANCE SETTINGS
+========================================== -->
+
+<section class="settings-section">
+
+    <div class="settings-card">
+
+        <div class="card-header">
+
+            <h2>
+
+                Appearance
+
+            </h2>
+
+        </div>
+
+        <div class="settings-grid">
+
+            <div class="form-group">
+
+                <label for="themeSelect">
+
+                    Theme
+
+                </label>
+
+                <select id="themeSelect">
+
+                    <option value="light">
+
+                        Light Mode
+
+                    </option>
+
+                    <option value="dark">
+
+                        Dark Mode
+
+                    </option>
+
+                </select>
+
+            </div>
+
+            <div class="form-group">
+
+                <label for="currency">
+
+                    Currency
+
+                </label>
+
+                <select id="currency">
+
+                    <option value="NGN">
+
+                        Nigerian Naira (₦)
+
+                    </option>
+
+                    <option value="USD">
+
+                        US Dollar ($)
+
+                    </option>
+
+                    <option value="GBP">
+
+                        British Pound (£)
+
+                    </option>
+
+                    <option value="EUR">
+
+                        Euro (€)
+
+                    </option>
+
+                </select>
+
+            </div>
+
+            <div class="form-group">
+
+                <label for="taxRate">
+
+                    Tax Rate (%)
+
+                </label>
+
+                <input
+                type="number"
+                id="taxRate"
+                placeholder="e.g. 7.5">
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- ==========================================
+     NOTIFICATION SETTINGS
+========================================== -->
+
+<section class="settings-section">
+
+    <div class="settings-card">
+
+        <div class="card-header">
+
+            <h2>
+
+                Notifications
+
+            </h2>
+
+        </div>
+
+        <div class="toggle-list">
+
+            <div class="toggle-item">
+
+                <span>
+
+                    Low Stock Alerts
+
+                </span>
+
+                <label class="switch">
+
+                    <input
+                    type="checkbox"
+                    id="lowStockAlerts"
+                    checked>
+
+                    <span class="slider"></span>
+
+                </label>
+
+            </div>
+
+            <div class="toggle-item">
+
+                <span>
+
+                    Daily Sales Report
+
+                </span>
+
+                <label class="switch">
+
+                    <input
+                    type="checkbox"
+                    id="dailyReport"
+                    checked>
+
+                    <span class="slider"></span>
+
+                </label>
+
+            </div>
+
+            <div class="toggle-item">
+
+                <span>
+
+                    Weekly Business Summary
+
+                </span>
+
+                <label class="switch">
+
+                    <input
+                    type="checkbox"
+                    id="weeklySummary">
+
+                    <span class="slider"></span>
+
+                </label>
+
+            </div>
+
+            <div class="toggle-item">
+
+                <span>
+
+                    Email Notifications
+
+                </span>
+
+                <label class="switch">
+
+                    <input
+                    type="checkbox"
+                    id="emailNotifications">
+
+                    <span class="slider"></span>
+
+                </label>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+<!-- ==========================================
+     SECURITY SETTINGS
+========================================== -->
+
+<section class="settings-section">
+
+    <div class="settings-card">
+
+        <div class="card-header">
+
+            <h2>
+
+                Security
+
+            </h2>
+
+        </div>
+
+        <div class="settings-actions">
+
+            <button
+            class="primary-btn"
+            id="changePasswordBtn">
+
+                <i class="fa-solid fa-key"></i>
+
+                Change Password
+
+            </button>
+
+            <button
+            class="secondary-btn"
+            id="logoutDevicesBtn">
+
+                <i class="fa-solid fa-right-from-bracket"></i>
+
+                Logout All Devices
+
+            </button>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- ==========================================
+     BACKUP & RESTORE
+========================================== -->
+
+<section class="settings-section">
+
+    <div class="settings-card">
+
+        <div class="card-header">
+
+            <h2>
+
+                Backup & Restore
+
+            </h2>
+
+        </div>
+
+        <div class="settings-actions">
+
+            <button
+            class="primary-btn"
+            id="backupDataBtn">
+
+                <i class="fa-solid fa-download"></i>
+
+                Backup Data
+
+            </button>
+
+            <button
+            class="secondary-btn"
+            id="restoreDataBtn">
+
+                <i class="fa-solid fa-upload"></i>
+
+                Restore Data
+
+            </button>
+
+            <button
+            class="danger-btn"
+            id="resetAppBtn">
+
+                <i class="fa-solid fa-trash"></i>
+
+                Reset Application
+
+            </button>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- ==========================================
+     SAVE SETTINGS
+========================================== -->
+
+<section class="settings-section">
+
+    <div class="settings-actions">
+
+        <button
+        class="primary-btn"
+        id="saveSettingsBtn">
+
+            <i class="fa-solid fa-floppy-disk"></i>
+
+            Save Settings
+
+        </button>
+
+    </div>
+
+</section>
+
+
+
+<!-- ==========================================
+     FOOTER
+========================================== -->
+
+<footer class="dashboard-footer">
+
+    <p>
+
+        © 2026 ShopLedger. All Rights Reserved.
+
+    </p>
+
+</footer>
+
+</section>
+
+</main>
+
+</div>
+
+
+
+<!-- ==========================================
+     SETTINGS JAVASCRIPT
+========================================== -->
+
+<script src="Assets/js/settings.js"></script>
+
+</body>
+
+</html>

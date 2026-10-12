@@ -1,0 +1,891 @@
+<!DOCTYPE html>
+
+<!--
+====================================================
+SHOPLEDGER
+File: customers.html
+Purpose: Customer Management
+Author: Mark Otu
+====================================================
+-->
+
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0">
+
+    <title>
+
+        Customers | ShopLedger
+
+    </title>
+
+    <!-- Google Fonts -->
+
+    <link
+        rel="preconnect"
+        href="https://fonts.googleapis.com">
+
+    <link
+        rel="preconnect"
+        href="https://fonts.gstatic.com"
+        crossorigin>
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet">
+
+    <!-- Font Awesome -->
+
+    <link
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+
+    <!-- Global Styles -->
+
+    <link
+        rel="stylesheet"
+        href="Assets/css/style.css">
+
+    <link
+        rel="stylesheet"
+        href="Assets/css/dashboard.css">
+
+    <link
+        rel="stylesheet"
+        href="Assets/css/customers.css">
+
+</head>
+
+<body>
+
+<div class="dashboard">
+
+    <!-- ==========================
+         Sidebar
+    =========================== -->
+
+    <aside class="sidebar">
+
+        <div class="sidebar-logo">
+
+            <i class="fa-solid fa-store"></i>
+
+            <h2>ShopLedger</h2>
+
+        </div>
+
+        <nav class="sidebar-nav">
+
+            <ul>
+
+                <li>
+
+                    <a href="dashboard.html">
+
+                        <i class="fa-solid fa-house"></i>
+
+                        <span>Dashboard</span>
+
+                    </a>
+
+                </li>
+
+                <li>
+
+                    <a href="inventory.html">
+
+                        <i class="fa-solid fa-boxes-stacked"></i>
+
+                        <span>Inventory</span>
+
+                    </a>
+
+                </li>
+
+                <li>
+
+                    <a href="sales.html">
+
+                        <i class="fa-solid fa-cart-shopping"></i>
+
+                        <span>Sales</span>
+
+                    </a>
+
+                </li>
+
+                <li class="active">
+
+                    <a href="customers.html">
+
+                        <i class="fa-solid fa-users"></i>
+
+                        <span>Customers</span>
+
+                    </a>
+
+                </li>
+
+                <li>
+
+                    <a href="#">
+
+                        <i class="fa-solid fa-chart-line"></i>
+
+                        <span>Analytics</span>
+
+                    </a>
+
+                </li>
+
+                <li>
+
+                    <a href="#">
+
+                        <i class="fa-solid fa-file-lines"></i>
+
+                        <span>Reports</span>
+
+                    </a>
+
+                </li>
+
+                <li>
+
+                    <a href="#">
+
+                        <i class="fa-solid fa-gear"></i>
+
+                        <span>Settings</span>
+
+                    </a>
+
+                </li>
+
+            </ul>
+
+        </nav>
+
+        <div class="sidebar-footer">
+
+            <a href="index.html">
+
+                <i class="fa-solid fa-right-from-bracket"></i>
+
+                <span>Logout</span>
+
+            </a>
+
+        </div>
+
+    </aside>
+
+    <!-- ==========================
+         Main Content
+    =========================== -->
+
+    <main class="dashboard-content">
+
+        <header class="topbar">
+
+            <div class="topbar-left">
+
+                <button
+                    class="menu-toggle"
+                    id="menuToggle">
+
+                    <i class="fa-solid fa-bars"></i>
+
+                </button>
+
+                <div class="welcome">
+
+                    <h1>
+
+                        Customer Management
+
+                    </h1>
+
+                    <p>
+
+                        Manage customer records and purchase history.
+
+                    </p>
+
+                </div>
+
+            </div>
+
+            <div class="topbar-right">
+
+                <div class="search-box">
+
+                    <i class="fa-solid fa-magnifying-glass"></i>
+
+                    <input
+                        type="text"
+                        id="customerSearch"
+                        placeholder="Search customers...">
+
+                </div>
+
+            </div>
+
+        </header>
+
+        <section class="dashboard-body">
+
+            <!-- ==========================================
+     Customer Statistics
+========================================== -->
+
+<section class="stats-grid">
+
+    <div class="stat-card">
+
+        <div class="stat-icon customers">
+
+            <i class="fa-solid fa-users"></i>
+
+        </div>
+
+        <div class="stat-details">
+
+            <span>Total Customers</span>
+
+            <h2 id="totalCustomers">0</h2>
+
+            <p class="positive">
+
+                <i class="fa-solid fa-arrow-trend-up"></i>
+
+                Updated automatically
+
+            </p>
+
+        </div>
+
+    </div>
+
+    <div class="stat-card">
+
+        <div class="stat-icon sales">
+
+            <i class="fa-solid fa-cart-shopping"></i>
+
+        </div>
+
+        <div class="stat-details">
+
+            <span>Total Purchases</span>
+
+            <h2 id="totalPurchases">0</h2>
+
+            <p class="neutral">
+
+                Linked with Sales Module
+
+            </p>
+
+        </div>
+
+    </div>
+
+    <div class="stat-card">
+
+        <div class="stat-icon revenue">
+
+            <i class="fa-solid fa-naira-sign"></i>
+
+        </div>
+
+        <div class="stat-details">
+
+            <span>Total Revenue</span>
+
+            <h2 id="customerRevenue">₦0</h2>
+
+            <p class="positive">
+
+                From customer purchases
+
+            </p>
+
+        </div>
+
+    </div>
+
+    <div class="stat-card">
+
+        <div class="stat-icon active">
+
+            <i class="fa-solid fa-user-check"></i>
+
+        </div>
+
+        <div class="stat-details">
+
+            <span>Active Customers</span>
+
+            <h2 id="activeCustomers">0</h2>
+
+            <p class="neutral">
+
+                Customers with recent purchases
+
+            </p>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- ==========================================
+     Customer Toolbar
+========================================== -->
+
+<section class="dashboard-card">
+
+    <div class="inventory-toolbar">
+
+        <div class="filter-group">
+
+            <select id="customerFilter">
+
+                <option value="all">
+
+                    All Customers
+
+                </option>
+
+                <option value="active">
+
+                    Active Customers
+
+                </option>
+
+                <option value="new">
+
+                    New Customers
+
+                </option>
+
+            </select>
+
+        </div>
+
+        <button
+            class="primary-btn"
+            id="addCustomerBtn">
+
+            <i class="fa-solid fa-user-plus"></i>
+
+            Add Customer
+
+        </button>
+
+    </div>
+
+</section>
+
+
+
+<!-- ==========================================
+     Customer Directory
+========================================== -->
+
+<section class="dashboard-card">
+
+    <div class="card-header">
+
+        <h2>
+
+            Customer Directory
+
+        </h2>
+
+    </div>
+
+    <table class="customers-table">
+
+        <thead>
+
+            <tr>
+
+                <th>Customer</th>
+
+                <th>Phone</th>
+
+                <th>Email</th>
+
+                <th>Total Purchases</th>
+
+                <th>Total Spent</th>
+
+                <th>Status</th>
+
+                <th>Actions</th>
+
+            </tr>
+
+        </thead>
+
+        <tbody id="customersTableBody">
+
+            <tr>
+
+                <td>John Doe</td>
+
+                <td>+234 801 234 5678</td>
+
+                <td>john@example.com</td>
+
+                <td>5</td>
+
+                <td>₦35,000</td>
+
+                <td>
+
+                    <span class="status paid">
+
+                        Active
+
+                    </span>
+
+                </td>
+
+                <td>
+
+                    <button class="table-btn edit">
+
+                        <i class="fa-solid fa-pen"></i>
+
+                    </button>
+
+                    <button class="table-btn delete">
+
+                        <i class="fa-solid fa-trash"></i>
+
+                    </button>
+
+                </td>
+
+            </tr>
+
+        </tbody>
+
+    </table>
+
+</section>
+
+<!-- ==========================================
+     Add Customer Modal
+========================================== -->
+
+<div
+    class="modal"
+    id="customerModal">
+
+    <div class="modal-content">
+
+        <div class="modal-header">
+
+            <h2>
+
+                Add New Customer
+
+            </h2>
+
+            <button
+                class="close-modal"
+                id="closeCustomerModal">
+
+                <i class="fa-solid fa-xmark"></i>
+
+            </button>
+
+        </div>
+
+        <form
+            id="customerForm">
+
+            <div class="form-grid">
+
+                <!-- Full Name -->
+
+                <div class="form-group">
+
+                    <label>
+
+                        Full Name
+
+                    </label>
+
+                    <input
+                        type="text"
+                        id="customerName"
+                        placeholder="Enter customer's full name"
+                        required>
+
+                </div>
+
+                <!-- Phone -->
+
+                <div class="form-group">
+
+                    <label>
+
+                        Phone Number
+
+                    </label>
+
+                    <input
+                        type="tel"
+                        id="customerPhone"
+                        placeholder="+234 800 000 0000"
+                        required>
+
+                </div>
+
+                <!-- Email -->
+
+                <div class="form-group">
+
+                    <label>
+
+                        Email Address
+
+                    </label>
+
+                    <input
+                        type="email"
+                        id="customerEmail"
+                        placeholder="customer@email.com">
+
+                </div>
+
+                <!-- Customer Type -->
+
+                <div class="form-group">
+
+                    <label>
+
+                        Customer Type
+
+                    </label>
+
+                    <select id="customerType">
+
+                        <option value="Regular">
+
+                            Regular Customer
+
+                        </option>
+
+                        <option value="Wholesale">
+
+                            Wholesale Customer
+
+                        </option>
+
+                        <option value="VIP">
+
+                            VIP Customer
+
+                        </option>
+
+                    </select>
+
+                </div>
+
+                <!-- Address -->
+
+                <div class="form-group">
+
+                    <label>
+
+                        Address
+
+                    </label>
+
+                    <input
+                        type="text"
+                        id="customerAddress"
+                        placeholder="Enter customer's address">
+
+                </div>
+
+                <!-- Status -->
+
+                <div class="form-group">
+
+                    <label>
+
+                        Status
+
+                    </label>
+
+                    <select id="customerStatus">
+
+                        <option value="Active">
+
+                            Active
+
+                        </option>
+
+                        <option value="Inactive">
+
+                            Inactive
+
+                        </option>
+
+                    </select>
+
+                </div>
+
+            </div>
+
+            <!-- Notes -->
+
+            <div class="form-group" style="margin-top:25px;">
+
+                <label>
+
+                    Notes
+
+                </label>
+
+                <textarea
+                    id="customerNotes"
+                    rows="5"
+                    placeholder="Additional information about this customer..."></textarea>
+
+            </div>
+
+            <div class="modal-actions">
+
+                <button
+                    type="button"
+                    class="secondary-btn"
+                    id="cancelCustomer">
+
+                    Cancel
+
+                </button>
+
+                <button
+                    type="submit"
+                    class="primary-btn">
+
+                    Save Customer
+
+                </button>
+
+            </div>
+
+        </form>
+
+    </div>
+
+</div>
+
+<!-- ==========================================
+     Pagination
+========================================== -->
+
+<section class="dashboard-card">
+
+    <div class="pagination-container">
+
+        <div class="pagination-info">
+
+            Showing
+
+            <strong>
+
+                1-10
+
+            </strong>
+
+            of
+
+            <strong>
+
+                100
+
+            </strong>
+
+            customers
+
+        </div>
+
+        <div class="pagination">
+
+            <button class="pagination-btn">
+
+                <i class="fa-solid fa-angle-left"></i>
+
+            </button>
+
+            <button class="pagination-btn active">
+
+                1
+
+            </button>
+
+            <button class="pagination-btn">
+
+                2
+
+            </button>
+
+            <button class="pagination-btn">
+
+                3
+
+            </button>
+
+            <button class="pagination-btn">
+
+                <i class="fa-solid fa-angle-right"></i>
+
+            </button>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- ==========================================
+     Customer Summary
+========================================== -->
+
+<section class="dashboard-card">
+
+    <div class="card-header">
+
+        <h2>
+
+            Customer Summary
+
+        </h2>
+
+    </div>
+
+    <div class="summary-grid">
+
+        <div class="summary-item">
+
+            <i class="fa-solid fa-user-group"></i>
+
+            <div>
+
+                <h4>
+
+                    Customer Relationships
+
+                </h4>
+
+                <p>
+
+                    Build long-term relationships by keeping accurate customer records and purchase history.
+
+                </p>
+
+            </div>
+
+        </div>
+
+        <div class="summary-item">
+
+            <i class="fa-solid fa-chart-line"></i>
+
+            <div>
+
+                <h4>
+
+                    Customer Analytics
+
+                </h4>
+
+                <p>
+
+                    Track customer spending, buying habits and purchasing trends over time.
+
+                </p>
+
+            </div>
+
+        </div>
+
+        <div class="summary-item">
+
+            <i class="fa-solid fa-clock-rotate-left"></i>
+
+            <div>
+
+                <h4>
+
+                    Last Updated
+
+                </h4>
+
+                <p id="customersLastUpdated">
+
+                    Just now
+
+                </p>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- ==========================================
+     Footer
+========================================== -->
+
+<footer class="dashboard-footer">
+
+    <p>
+
+        © 2026 ShopLedger. All Rights Reserved.
+
+    </p>
+
+</footer>
+
+</section>
+
+</main>
+
+</div>
+
+
+
+<!-- ==========================================
+     Customers JavaScript
+========================================== -->
+
+<script src="Assets/js/customers.js"></script>
+
+</body>
+
+</html>

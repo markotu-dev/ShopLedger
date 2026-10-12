@@ -1,0 +1,834 @@
+<!DOCTYPE html>
+
+<!--
+====================================================
+SHOPLEDGER
+File: dashboard.html
+Purpose: Main Dashboard
+Author: Mark Otu
+====================================================
+-->
+
+<html lang="en">
+
+<head>
+
+    <!-- Character Encoding -->
+    <meta charset="UTF-8">
+
+    <!-- Responsive Design -->
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0">
+
+    <!-- Title -->
+    <title>Dashboard | ShopLedger</title>
+
+    <!-- Google Fonts -->
+    <link
+        rel="preconnect"
+        href="https://fonts.googleapis.com">
+
+    <link
+        rel="preconnect"
+        href="https://fonts.gstatic.com"
+        crossorigin>
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet">
+
+    <!-- Font Awesome -->
+    <link
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+
+    <!-- Global CSS -->
+    <link
+        rel="stylesheet"
+        href="Assets/css/style.css">
+
+    <!-- Dashboard CSS -->
+    <link
+        rel="stylesheet"
+        href="Assets/css/dashboard.css">
+
+</head>
+
+<body>
+
+<!-- ==========================================
+     Dashboard Wrapper
+========================================== -->
+
+<div class="dashboard">
+
+    <!-- ==========================================
+         Sidebar
+    =========================================== -->
+
+    <aside class="sidebar">
+
+        <!-- Logo -->
+
+        <div class="sidebar-logo">
+
+            <i class="fa-solid fa-store"></i>
+
+            <h2>ShopLedger</h2>
+
+        </div>
+
+
+        <!-- Navigation -->
+
+        <nav class="sidebar-nav">
+
+            <ul>
+
+                <li class="active">
+
+                    <a href="dashboard.html">
+
+                        <i class="fa-solid fa-house"></i>
+
+                        <span>Dashboard</span>
+
+                    </a>
+
+                </li>
+
+                <li>
+
+                    <a href="#">
+
+                        <i class="fa-solid fa-boxes-stacked"></i>
+
+                        <span>Inventory</span>
+
+                    </a>
+
+                </li>
+
+                <li>
+
+                    <a href="#">
+
+                        <i class="fa-solid fa-cart-shopping"></i>
+
+                        <span>Sales</span>
+
+                    </a>
+
+                </li>
+
+                <li>
+
+                    <a href="#">
+
+                        <i class="fa-solid fa-users"></i>
+
+                        <span>Customers</span>
+
+                    </a>
+
+                </li>
+
+                <li>
+
+                    <a href="#">
+
+                        <i class="fa-solid fa-chart-line"></i>
+
+                        <span>Analytics</span>
+
+                    </a>
+
+                </li>
+
+                <li>
+
+                    <a href="#">
+
+                        <i class="fa-solid fa-file-lines"></i>
+
+                        <span>Reports</span>
+
+                    </a>
+
+                </li>
+
+                <li>
+
+                    <a href="#">
+
+                        <i class="fa-solid fa-gear"></i>
+
+                        <span>Settings</span>
+
+                    </a>
+
+                </li>
+
+            </ul>
+
+        </nav>
+
+
+        <!-- Sidebar Footer -->
+
+        <div class="sidebar-footer">
+
+            <a href="index.html">
+
+                <i class="fa-solid fa-right-from-bracket"></i>
+
+                <span>Logout</span>
+
+            </a>
+
+        </div>
+
+    </aside>
+
+
+
+    <!-- ==========================================
+         Main Content
+    =========================================== -->
+
+    <main class="dashboard-content">
+
+        <!-- ==========================================
+             Top Navigation
+        =========================================== -->
+
+        <header class="topbar">
+
+            <!-- Left -->
+
+            <div class="topbar-left">
+
+                <button
+                    class="menu-toggle"
+                    id="menuToggle">
+
+                    <i class="fa-solid fa-bars"></i>
+
+                </button>
+
+                <div class="welcome">
+
+                    <h1>
+
+                        Welcome Back,
+
+                        <span id="userName">
+
+                            Mark
+
+                        </span>
+
+                        👋
+
+                    </h1>
+
+                    <p>
+
+                        Here's what's happening with your business today.
+
+                    </p>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- Right -->
+
+            <div class="topbar-right">
+
+                <!-- Search -->
+
+                <div class="search-box">
+
+                    <i class="fa-solid fa-magnifying-glass"></i>
+
+                    <input
+                        type="text"
+                        placeholder="Search products, sales, customers...">
+
+                </div>
+
+                <!-- Notifications -->
+
+                <button class="notification-btn">
+
+                    <i class="fa-regular fa-bell"></i>
+
+                    <span class="notification-count">
+
+                        3
+
+                    </span>
+
+                </button>
+
+                <!-- Profile -->
+
+                <div class="profile-card">
+
+                    <img
+                        src="Assets/AI-Images/profile.png"
+                        alt="Profile">
+
+                    <div>
+
+                        <h4>Mark Otu</h4>
+
+                        <span>Administrator</span>
+
+                    </div>
+
+                    <i class="fa-solid fa-chevron-down"></i>
+
+                </div>
+
+            </div>
+
+        </header>
+
+
+
+        <!-- ==========================================
+             Dashboard Body
+        =========================================== -->
+
+        <section class="dashboard-body">
+
+            <!-- ==========================================
+     Statistics Cards
+========================================== -->
+
+<section class="stats-grid">
+
+    <div class="stat-card">
+
+        <div class="stat-icon revenue">
+
+            <i class="fa-solid fa-wallet"></i>
+
+        </div>
+
+        <div class="stat-details">
+
+            <span>Total Revenue</span>
+
+            <h2 id="totalRevenue">₦0.00</h2>
+
+            <p class="positive">
+
+                <i class="fa-solid fa-arrow-trend-up"></i>
+
+                +12.5% this month
+
+            </p>
+
+        </div>
+
+    </div>
+
+
+
+    <div class="stat-card">
+
+        <div class="stat-icon sales">
+
+            <i class="fa-solid fa-cart-shopping"></i>
+
+        </div>
+
+        <div class="stat-details">
+
+            <span>Total Sales</span>
+
+            <h2 id="totalSales">0</h2>
+
+            <p class="positive">
+
+                <i class="fa-solid fa-arrow-trend-up"></i>
+
+                +8.2% this week
+
+            </p>
+
+        </div>
+
+    </div>
+
+
+
+    <div class="stat-card">
+
+        <div class="stat-icon inventory">
+
+            <i class="fa-solid fa-boxes-stacked"></i>
+
+        </div>
+
+        <div class="stat-details">
+
+            <span>Products</span>
+
+            <h2 id="totalProducts">0</h2>
+
+            <p class="neutral">
+
+                Inventory Ready
+
+            </p>
+
+        </div>
+
+    </div>
+
+
+
+    <div class="stat-card">
+
+        <div class="stat-icon profit">
+
+            <i class="fa-solid fa-chart-line"></i>
+
+        </div>
+
+        <div class="stat-details">
+
+            <span>Monthly Profit</span>
+
+            <h2 id="monthlyProfit">₦0.00</h2>
+
+            <p class="positive">
+
+                <i class="fa-solid fa-arrow-trend-up"></i>
+
+                +15.1% Growth
+
+            </p>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- ==========================================
+     Dashboard Grid
+========================================== -->
+
+<div class="dashboard-grid">
+
+
+
+    <!-- Sales Overview -->
+
+    <section class="dashboard-card chart-card">
+
+        <div class="card-header">
+
+            <h2>Sales Overview</h2>
+
+            <button class="card-button">
+
+                This Month
+
+            </button>
+
+        </div>
+
+        <canvas id="salesChart"></canvas>
+
+    </section>
+
+
+
+    <!-- Low Stock -->
+
+    <section class="dashboard-card">
+
+        <div class="card-header">
+
+            <h2>
+
+                Low Stock Alerts
+
+            </h2>
+
+        </div>
+
+        <div class="stock-list">
+
+            <div class="stock-item">
+
+                <span>Coca-Cola 50cl</span>
+
+                <strong class="danger">5 Left</strong>
+
+            </div>
+
+            <div class="stock-item">
+
+                <span>Peak Milk</span>
+
+                <strong class="danger">3 Left</strong>
+
+            </div>
+
+            <div class="stock-item">
+
+                <span>Indomie Chicken</span>
+
+                <strong class="warning">12 Left</strong>
+
+            </div>
+
+            <div class="stock-item">
+
+                <span>Golden Morn</span>
+
+                <strong class="warning">9 Left</strong>
+
+            </div>
+
+        </div>
+
+    </section>
+
+</div>
+
+
+
+<!-- ==========================================
+     Recent Sales
+========================================== -->
+
+<section class="dashboard-card">
+
+    <div class="card-header">
+
+        <h2>
+
+            Recent Sales
+
+        </h2>
+
+        <button class="card-button">
+
+            View All
+
+        </button>
+
+    </div>
+
+    <table class="sales-table">
+
+        <thead>
+
+            <tr>
+
+                <th>Invoice</th>
+
+                <th>Customer</th>
+
+                <th>Amount</th>
+
+                <th>Status</th>
+
+            </tr>
+
+        </thead>
+
+        <tbody>
+
+            <tr>
+
+                <td>#SL1001</td>
+
+                <td>John David</td>
+
+                <td>₦18,500</td>
+
+                <td>
+
+                    <span class="status paid">
+
+                        Paid
+
+                    </span>
+
+                </td>
+
+            </tr>
+
+            <tr>
+
+                <td>#SL1002</td>
+
+                <td>Sarah James</td>
+
+                <td>₦42,000</td>
+
+                <td>
+
+                    <span class="status paid">
+
+                        Paid
+
+                    </span>
+
+                </td>
+
+            </tr>
+
+            <tr>
+
+                <td>#SL1003</td>
+
+                <td>Michael Obi</td>
+
+                <td>₦8,700</td>
+
+                <td>
+
+                    <span class="status pending">
+
+                        Pending
+
+                    </span>
+
+                </td>
+
+            </tr>
+
+        </tbody>
+
+    </table>
+
+
+
+</section>
+
+
+
+<!-- ==========================================
+     Quick Actions
+========================================== -->
+
+<section class="dashboard-card">
+
+    <div class="card-header">
+
+        <h2>
+
+            Quick Actions
+
+        </h2>
+
+    </div>
+
+    <div class="quick-actions">
+
+        <button>
+
+            <i class="fa-solid fa-plus"></i>
+
+            Add Product
+
+        </button>
+
+        <button>
+
+            <i class="fa-solid fa-cart-plus"></i>
+
+            New Sale
+
+        </button>
+
+        <button>
+
+            <i class="fa-solid fa-file-export"></i>
+
+            Export Report
+
+        </button>
+
+        <button>
+
+            <i class="fa-solid fa-users"></i>
+
+            Customers
+
+        </button>
+
+    </div>
+
+</section>
+
+
+<!-- ==========================================
+     Bottom Widgets
+========================================== -->
+
+<div class="dashboard-grid">
+
+    <!-- Recent Activity -->
+
+    <section class="dashboard-card">
+
+        <div class="card-header">
+
+            <h2>
+
+                Recent Activity
+
+            </h2>
+
+        </div>
+
+        <div class="activity-list">
+
+            <div class="activity-item">
+
+                <i class="fa-solid fa-circle-check activity-success"></i>
+
+                <div>
+
+                    <h4>New Sale Completed</h4>
+
+                    <p>Invoice #SL1003 was successfully processed.</p>
+
+                </div>
+
+                <span>2 mins ago</span>
+
+            </div>
+
+            <div class="activity-item">
+
+                <i class="fa-solid fa-box activity-warning"></i>
+
+                <div>
+
+                    <h4>Low Stock Alert</h4>
+
+                    <p>Peak Milk stock is running low.</p>
+
+                </div>
+
+                <span>20 mins ago</span>
+
+            </div>
+
+            <div class="activity-item">
+
+                <i class="fa-solid fa-user-plus activity-primary"></i>
+
+                <div>
+
+                    <h4>New Customer</h4>
+
+                    <p>Sarah James was added to customers.</p>
+
+                </div>
+
+                <span>1 hour ago</span>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- Calendar -->
+
+    <section class="dashboard-card">
+
+        <div class="card-header">
+
+            <h2>
+
+                Calendar
+
+            </h2>
+
+        </div>
+
+        <div class="calendar-widget">
+
+            <i class="fa-regular fa-calendar-days"></i>
+
+            <h3 id="currentDate">
+
+                July 2026
+
+            </h3>
+
+            <p>
+
+                Upcoming reminders and business events will appear here.
+
+            </p>
+
+        </div>
+
+    </section>
+
+</div>
+
+
+
+<!-- ==========================================
+     Footer
+========================================== -->
+
+<footer class="dashboard-footer">
+
+    <p>
+
+        © 2026 ShopLedger. All Rights Reserved.
+
+    </p>
+
+</footer>
+
+</section>
+
+</main>
+
+</div>
+
+
+
+<!-- ==========================================
+     Chart.js
+========================================== -->
+
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+
+
+<!-- ==========================================
+     Dashboard JavaScript
+========================================== -->
+
+<script src="Assets/js/dashboard.js"></script>
+
+</body>
+
+</html>
+

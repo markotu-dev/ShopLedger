@@ -1,0 +1,7 @@
+<?xml version='1.0' encoding='utf-8'?>
+<resources>
+    <string name="app_name">shopledger</string>
+    <string name="title_activity_main">shopledger</string>
+    <string name="package_name">com.shopledger.app</string>
+    <string name="custom_url_scheme">com.shopledger.app</string>
+</resources>

@@ -1,0 +1,971 @@
+<!DOCTYPE html>
+
+<!--
+====================================================
+SHOPLEDGER
+File: inventory.html
+Purpose: Inventory Management
+Author: Mark Otu
+====================================================
+-->
+
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0">
+
+    <title>
+
+        Inventory | ShopLedger
+
+    </title>
+
+    <!-- Google Fonts -->
+
+    <link
+        rel="preconnect"
+        href="https://fonts.googleapis.com">
+
+    <link
+        rel="preconnect"
+        href="https://fonts.gstatic.com"
+        crossorigin>
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet">
+
+    <!-- Font Awesome -->
+
+    <link
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+
+    <!-- Global CSS -->
+
+    <link
+        rel="stylesheet"
+        href="Assets/css/style.css">
+
+    <!-- Dashboard CSS -->
+
+    <link
+        rel="stylesheet"
+        href="Assets/css/dashboard.css">
+
+    <!-- Inventory CSS -->
+
+    <link
+        rel="stylesheet"
+        href="Assets/css/inventory.css">
+
+</head>
+
+<body>
+
+<div class="dashboard">
+
+    <!-- ==========================
+         Sidebar
+    =========================== -->
+
+    <aside class="sidebar">
+
+        <div class="sidebar-logo">
+
+            <i class="fa-solid fa-store"></i>
+
+            <h2>ShopLedger</h2>
+
+        </div>
+
+        <nav class="sidebar-nav">
+
+            <ul>
+
+                <li>
+
+                    <a href="dashboard.html">
+
+                        <i class="fa-solid fa-house"></i>
+
+                        <span>Dashboard</span>
+
+                    </a>
+
+                </li>
+
+                <li class="active">
+
+                    <a href="inventory.html">
+
+                        <i class="fa-solid fa-boxes-stacked"></i>
+
+                        <span>Inventory</span>
+
+                    </a>
+
+                </li>
+
+                <li>
+
+                    <a href="#">
+
+                        <i class="fa-solid fa-cart-shopping"></i>
+
+                        <span>Sales</span>
+
+                    </a>
+
+                </li>
+
+                <li>
+
+                    <a href="#">
+
+                        <i class="fa-solid fa-users"></i>
+
+                        <span>Customers</span>
+
+                    </a>
+
+                </li>
+
+                <li>
+
+                    <a href="#">
+
+                        <i class="fa-solid fa-chart-line"></i>
+
+                        <span>Analytics</span>
+
+                    </a>
+
+                </li>
+
+                <li>
+
+                    <a href="#">
+
+                        <i class="fa-solid fa-file-lines"></i>
+
+                        <span>Reports</span>
+
+                    </a>
+
+                </li>
+
+                <li>
+
+                    <a href="#">
+
+                        <i class="fa-solid fa-gear"></i>
+
+                        <span>Settings</span>
+
+                    </a>
+
+                </li>
+
+            </ul>
+
+        </nav>
+
+        <div class="sidebar-footer">
+
+            <a href="index.html">
+
+                <i class="fa-solid fa-right-from-bracket"></i>
+
+                <span>Logout</span>
+
+            </a>
+
+        </div>
+
+    </aside>
+
+    <!-- ==========================
+         Main Content
+    =========================== -->
+
+    <main class="dashboard-content">
+
+        <header class="topbar">
+
+            <div class="topbar-left">
+
+                <button
+                    class="menu-toggle"
+                    id="menuToggle">
+
+                    <i class="fa-solid fa-bars"></i>
+
+                </button>
+
+                <div class="welcome">
+
+                    <h1>
+
+                        Inventory Management
+
+                    </h1>
+
+                    <p>
+
+                        Manage products, stock levels and suppliers.
+
+                    </p>
+
+                </div>
+
+            </div>
+
+            <div class="topbar-right">
+
+                <div class="search-box">
+
+                    <i class="fa-solid fa-magnifying-glass"></i>
+
+                    <input
+                        type="text"
+                        id="inventorySearch"
+                        placeholder="Search products...">
+
+                </div>
+
+            </div>
+
+        </header>
+
+        <section class="dashboard-body">
+
+            <!-- ==========================================
+     Inventory Statistics
+========================================== -->
+
+<section class="stats-grid">
+
+    <div class="stat-card">
+
+        <div class="stat-icon inventory">
+
+            <i class="fa-solid fa-boxes-stacked"></i>
+
+        </div>
+
+        <div class="stat-details">
+
+            <span>Total Products</span>
+
+            <h2 id="totalProducts">0</h2>
+
+            <p class="positive">
+
+                <i class="fa-solid fa-arrow-trend-up"></i>
+
+                Ready for database
+
+            </p>
+
+        </div>
+
+    </div>
+
+
+    <div class="stat-card">
+
+        <div class="stat-icon sales">
+
+            <i class="fa-solid fa-layer-group"></i>
+
+        </div>
+
+        <div class="stat-details">
+
+            <span>Categories</span>
+
+            <h2 id="totalCategories">0</h2>
+
+            <p class="neutral">
+
+                Product groups
+
+            </p>
+
+        </div>
+
+    </div>
+
+
+    <div class="stat-card">
+
+        <div class="stat-icon revenue">
+
+            <i class="fa-solid fa-triangle-exclamation"></i>
+
+        </div>
+
+        <div class="stat-details">
+
+            <span>Low Stock</span>
+
+            <h2 id="lowStockCount">0</h2>
+
+            <p class="danger">
+
+                Needs attention
+
+            </p>
+
+        </div>
+
+    </div>
+
+
+    <div class="stat-card">
+
+        <div class="stat-icon profit">
+
+            <i class="fa-solid fa-naira-sign"></i>
+
+        </div>
+
+        <div class="stat-details">
+
+            <span>Inventory Value</span>
+
+            <h2 id="inventoryValue">₦0</h2>
+
+            <p class="positive">
+
+                Total stock value
+
+            </p>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- ==========================================
+     Inventory Toolbar
+========================================== -->
+
+<section class="dashboard-card">
+
+    <div class="inventory-toolbar">
+
+        <div class="filter-group">
+
+            <select id="categoryFilter">
+
+                <option value="all">
+
+                    All Categories
+
+                </option>
+
+                <option>
+
+                    Beverages
+
+                </option>
+
+                <option>
+
+                    Food
+
+                </option>
+
+                <option>
+
+                    Electronics
+
+                </option>
+
+                <option>
+
+                    Fashion
+
+                </option>
+
+            </select>
+
+        </div>
+
+
+        <button
+            class="primary-btn"
+            id="addProductBtn">
+
+            <i class="fa-solid fa-plus"></i>
+
+            Add Product
+
+        </button>
+
+    </div>
+
+</section>
+
+
+
+<!-- ==========================================
+     Products Table
+========================================== -->
+
+<section class="dashboard-card">
+
+    <div class="card-header">
+
+        <h2>
+
+            Product Inventory
+
+        </h2>
+
+    </div>
+
+    <table class="sales-table inventory-table">
+
+        <thead>
+
+            <tr>
+
+                <th>Image</th>
+
+                <th>Product</th>
+
+                <th>Category</th>
+
+                <th>Stock</th>
+
+                <th>Price</th>
+
+                <th>Status</th>
+
+                <th>Actions</th>
+
+            </tr>
+
+        </thead>
+
+        <tbody id="inventoryTableBody">
+
+            <tr>
+
+                <td>
+
+                    <img
+                        src="Assets/AI-Images/inventory.png"
+                        alt="Product"
+                        class="product-image">
+
+                </td>
+
+                <td>
+
+                    Coca-Cola 50cl
+
+                </td>
+
+                <td>
+
+                    Beverages
+
+                </td>
+
+                <td>
+
+                    45
+
+                </td>
+
+                <td>
+
+                    ₦500
+
+                </td>
+
+                <td>
+
+                    <span class="status paid">
+
+                        In Stock
+
+                    </span>
+
+                </td>
+
+                <td>
+
+                    <button class="table-btn edit">
+
+                        <i class="fa-solid fa-pen"></i>
+
+                    </button>
+
+                    <button class="table-btn delete">
+
+                        <i class="fa-solid fa-trash"></i>
+
+                    </button>
+
+                </td>
+
+            </tr>
+
+        </tbody>
+
+    </table>
+
+</section>
+
+<!-- ==========================================
+     Add Product Modal
+========================================== -->
+
+<div
+    class="modal"
+    id="productModal">
+
+    <div class="modal-content">
+
+        <div class="modal-header">
+
+            <h2>
+
+                Add New Product
+
+            </h2>
+
+            <button
+                class="close-modal"
+                id="closeModal">
+
+                <i class="fa-solid fa-xmark"></i>
+
+            </button>
+
+        </div>
+
+
+        <form
+            id="productForm">
+
+            <div class="form-grid">
+
+                <!-- Product Name -->
+
+                <div class="form-group">
+
+                    <label>
+
+                        Product Name
+
+                    </label>
+
+                    <input
+                        type="text"
+                        id="productName"
+                        placeholder="Enter product name"
+                        required>
+
+                </div>
+
+
+                <!-- SKU -->
+
+                <div class="form-group">
+
+                    <label>
+
+                        SKU
+
+                    </label>
+
+                    <input
+                        type="text"
+                        id="sku"
+                        placeholder="e.g. SKU-001">
+
+                </div>
+
+
+                <!-- Category -->
+
+                <div class="form-group">
+
+                    <label>
+
+                        Category
+
+                    </label>
+
+                    <select id="category">
+
+                        <option>Beverages</option>
+
+                        <option>Food</option>
+
+                        <option>Electronics</option>
+
+                        <option>Fashion</option>
+
+                    </select>
+
+                </div>
+
+
+                <!-- Supplier -->
+
+                <div class="form-group">
+
+                    <label>
+
+                        Supplier
+
+                    </label>
+
+                    <input
+                        type="text"
+                        id="supplier"
+                        placeholder="Supplier name">
+
+                </div>
+
+
+                <!-- Cost Price -->
+
+                <div class="form-group">
+
+                    <label>
+
+                        Cost Price (₦)
+
+                    </label>
+
+                    <input
+                        type="number"
+                        id="costPrice">
+
+                </div>
+
+
+                <!-- Selling Price -->
+
+                <div class="form-group">
+
+                    <label>
+
+                        Selling Price (₦)
+
+                    </label>
+
+                    <input
+                        type="number"
+                        id="sellingPrice">
+
+                </div>
+
+
+                <!-- Quantity -->
+
+                <div class="form-group">
+
+                    <label>
+
+                        Stock Quantity
+
+                    </label>
+
+                    <input
+                        type="number"
+                        id="quantity">
+
+                </div>
+
+
+                <!-- Barcode -->
+
+                <div class="form-group">
+
+                    <label>
+
+                        Barcode
+
+                    </label>
+
+                    <input
+                        type="text"
+                        id="barcode">
+
+                </div>
+
+
+                <!-- Expiry -->
+
+                <div class="form-group">
+
+                    <label>
+
+                        Expiry Date
+
+                    </label>
+
+                    <input
+                        type="date"
+                        id="expiryDate">
+
+                </div>
+
+
+                <!-- Image -->
+
+                <div class="form-group">
+
+                    <label>
+
+                        Product Image
+
+                    </label>
+
+                    <input
+                        type="file"
+                        id="productImage"
+                        accept="image/*">
+
+                </div>
+
+            </div>
+
+
+            <div class="modal-actions">
+
+                <button
+                    type="button"
+                    class="secondary-btn"
+                    id="cancelProduct">
+
+                    Cancel
+
+                </button>
+
+                <button
+                    type="submit"
+                    class="primary-btn">
+
+                    Save Product
+
+                </button>
+
+            </div>
+
+        </form>
+
+    </div>
+
+</div>
+
+<!-- ==========================================
+     Pagination
+========================================== -->
+
+<section class="dashboard-card">
+
+    <div class="pagination-container">
+
+        <div class="pagination-info">
+
+            Showing
+
+            <strong>
+
+                1-10
+
+            </strong>
+
+            of
+
+            <strong>
+
+                100
+
+            </strong>
+
+            products
+
+        </div>
+
+        <div class="pagination">
+
+            <button class="pagination-btn">
+
+                <i class="fa-solid fa-angle-left"></i>
+
+            </button>
+
+            <button class="pagination-btn active">
+
+                1
+
+            </button>
+
+            <button class="pagination-btn">
+
+                2
+
+            </button>
+
+            <button class="pagination-btn">
+
+                3
+
+            </button>
+
+            <button class="pagination-btn">
+
+                <i class="fa-solid fa-angle-right"></i>
+
+            </button>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- ==========================================
+     Inventory Summary
+========================================== -->
+
+<section class="dashboard-card">
+
+    <div class="card-header">
+
+        <h2>
+
+            Inventory Summary
+
+        </h2>
+
+    </div>
+
+    <div class="summary-grid">
+
+        <div class="summary-item">
+
+            <i class="fa-solid fa-cubes"></i>
+
+            <div>
+
+                <h4>
+
+                    Stock Status
+
+                </h4>
+
+                <p>
+
+                    Inventory levels are healthy.
+
+                </p>
+
+            </div>
+
+        </div>
+
+        <div class="summary-item">
+
+            <i class="fa-solid fa-chart-pie"></i>
+
+            <div>
+
+                <h4>
+
+                    Category Distribution
+
+                </h4>
+
+                <p>
+
+                    Categories will be visualized after backend integration.
+
+                </p>
+
+            </div>
+
+        </div>
+
+        <div class="summary-item">
+
+            <i class="fa-solid fa-clock-rotate-left"></i>
+
+            <div>
+
+                <h4>
+
+                    Last Updated
+
+                </h4>
+
+                <p id="lastUpdated">
+
+                    Just now
+
+                </p>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- ==========================================
+     Footer
+========================================== -->
+
+<footer class="dashboard-footer">
+
+    <p>
+
+        © 2026 ShopLedger. All Rights Reserved.
+
+    </p>
+
+</footer>
+
+
+
+</section>
+
+</main>
+
+</div>
+
+
+
+<!-- ==========================================
+     Inventory JavaScript
+========================================== -->
+
+<script src="Assets/js/inventory.js"></script>
+
+</body>
+
+</html>

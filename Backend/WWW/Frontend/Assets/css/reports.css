@@ -1,0 +1,599 @@
+/* =====================================================
+   SHOPLEDGER
+   File: reports.css
+   Purpose: Reports Module Styling
+   Author: Mark Otu
+====================================================== */
+
+
+/* =====================================================
+   REPORT TOOLBAR
+====================================================== */
+
+.inventory-toolbar{
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+    gap:20px;
+
+    flex-wrap:wrap;
+
+}
+
+.filter-group{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:15px;
+
+    flex-wrap:wrap;
+
+}
+
+.filter-group input[type="date"]{
+
+    padding:14px 18px;
+
+    border:1px solid #E2E8F0;
+
+    border-radius:12px;
+
+    background:#FFFFFF;
+
+    font-size:15px;
+
+    outline:none;
+
+    transition:all .3s ease;
+
+}
+
+.filter-group input[type="date"]:focus{
+
+    border-color:#2563EB;
+
+    box-shadow:0 0 0 4px rgba(37,99,235,.12);
+
+}
+
+
+
+/* =====================================================
+   BUTTONS
+====================================================== */
+
+.primary-btn,
+
+.secondary-btn{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:10px;
+
+    padding:14px 22px;
+
+    border:none;
+
+    border-radius:14px;
+
+    font-size:15px;
+
+    font-weight:600;
+
+    cursor:pointer;
+
+    transition:all .3s ease;
+
+}
+
+.primary-btn{
+
+    background:linear-gradient(135deg,#2563EB,#1D4ED8);
+
+    color:#FFFFFF;
+
+}
+
+.primary-btn:hover{
+
+    transform:translateY(-3px);
+
+    box-shadow:0 15px 35px rgba(37,99,235,.25);
+
+}
+
+.secondary-btn{
+
+    background:#F1F5F9;
+
+    color:#334155;
+
+}
+
+.secondary-btn:hover{
+
+    background:#E2E8F0;
+
+    transform:translateY(-2px);
+
+}
+
+
+
+/* =====================================================
+   REPORT TABLE
+====================================================== */
+
+.reports-table{
+
+    width:100%;
+
+    border-collapse:collapse;
+
+}
+
+.reports-table th{
+
+    background:#F8FAFC;
+
+    color:#1E293B;
+
+    text-align:left;
+
+    padding:18px;
+
+    font-weight:600;
+
+    white-space:nowrap;
+
+}
+
+.reports-table td{
+
+    padding:18px;
+
+    border-bottom:1px solid #E2E8F0;
+
+}
+
+.reports-table tbody tr{
+
+    transition:all .3s ease;
+
+}
+
+.reports-table tbody tr:hover{
+
+    background:#F8FAFC;
+
+}
+
+
+
+/* =====================================================
+   STATUS BADGES
+====================================================== */
+
+.status{
+
+    display:inline-block;
+
+    padding:8px 14px;
+
+    border-radius:50px;
+
+    font-size:13px;
+
+    font-weight:600;
+
+}
+
+.status.paid{
+
+    background:#DCFCE7;
+
+    color:#15803D;
+
+}
+
+.status.pending{
+
+    background:#FEF3C7;
+
+    color:#B45309;
+
+}
+
+/* =====================================================
+   BUSINESS SUMMARY
+====================================================== */
+
+.summary-grid{
+
+    display:grid;
+
+    grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+
+    gap:20px;
+
+}
+
+.summary-item{
+
+    display:flex;
+
+    align-items:flex-start;
+
+    gap:18px;
+
+    padding:24px;
+
+    background:#F8FAFC;
+
+    border-radius:18px;
+
+    transition:all .3s ease;
+
+}
+
+.summary-item:hover{
+
+    transform:translateY(-5px);
+
+    box-shadow:0 15px 35px rgba(15,23,42,.08);
+
+}
+
+.summary-item i{
+
+    font-size:30px;
+
+    color:#2563EB;
+
+}
+
+.summary-item h4{
+
+    margin-bottom:8px;
+
+    color:#1E293B;
+
+    font-size:18px;
+
+}
+
+.summary-item p{
+
+    color:#64748B;
+
+    line-height:1.7;
+
+}
+
+
+
+/* =====================================================
+   PAGINATION
+====================================================== */
+
+.pagination-container{
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+    flex-wrap:wrap;
+
+    gap:20px;
+
+}
+
+.pagination-info{
+
+    color:#64748B;
+
+    font-size:15px;
+
+}
+
+.pagination{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:10px;
+
+}
+
+.pagination-btn{
+
+    min-width:42px;
+
+    height:42px;
+
+    padding:0 14px;
+
+    border:none;
+
+    border-radius:10px;
+
+    background:#F8FAFC;
+
+    color:#334155;
+
+    font-weight:600;
+
+    cursor:pointer;
+
+    transition:all .3s ease;
+
+}
+
+.pagination-btn:hover{
+
+    background:#DBEAFE;
+
+    color:#2563EB;
+
+}
+
+.pagination-btn.active{
+
+    background:#2563EB;
+
+    color:#FFFFFF;
+
+}
+
+
+
+/* =====================================================
+   REPORT SECTIONS
+====================================================== */
+
+.dashboard-card{
+
+    margin-bottom:30px;
+
+}
+
+.card-header{
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+    margin-bottom:20px;
+
+}
+
+.card-header h2{
+
+    color:#1E293B;
+
+    font-size:22px;
+
+    font-weight:700;
+
+}
+
+
+
+/* =====================================================
+   TABLE RESPONSIVENESS
+====================================================== */
+
+.reports-table{
+
+    min-width:700px;
+
+}
+
+.dashboard-card{
+
+    overflow-x:auto;
+
+}
+
+/* =====================================================
+   RESPONSIVE DESIGN
+====================================================== */
+
+@media (max-width: 992px){
+
+    .inventory-toolbar{
+
+        flex-direction:column;
+
+        align-items:stretch;
+
+    }
+
+    .filter-group{
+
+        width:100%;
+
+        justify-content:flex-start;
+
+        flex-wrap:wrap;
+
+    }
+
+    .filter-group input[type="date"]{
+
+        flex:1;
+
+        min-width:180px;
+
+    }
+
+}
+
+@media (max-width:768px){
+
+    .summary-grid{
+
+        grid-template-columns:1fr;
+
+    }
+
+    .pagination-container{
+
+        flex-direction:column;
+
+        align-items:flex-start;
+
+    }
+
+    .reports-table{
+
+        display:block;
+
+        overflow-x:auto;
+
+        white-space:nowrap;
+
+    }
+
+    .primary-btn,
+
+    .secondary-btn{
+
+        width:100%;
+
+        justify-content:center;
+
+    }
+
+}
+
+@media (max-width:576px){
+
+    .card-header h2{
+
+        font-size:20px;
+
+    }
+
+    .summary-item{
+
+        flex-direction:column;
+
+        align-items:flex-start;
+
+        text-align:left;
+
+    }
+
+    .summary-item i{
+
+        font-size:26px;
+
+    }
+
+}
+
+
+
+/* =====================================================
+   SMOOTH ANIMATIONS
+====================================================== */
+
+.dashboard-card{
+
+    animation:fadeUp .4s ease;
+
+}
+
+@keyframes fadeUp{
+
+    from{
+
+        opacity:0;
+
+        transform:translateY(20px);
+
+    }
+
+    to{
+
+        opacity:1;
+
+        transform:translateY(0);
+
+    }
+
+}
+
+
+
+/* =====================================================
+   PRINT STYLES
+====================================================== */
+
+@media print{
+
+    body{
+
+        background:#FFFFFF;
+
+    }
+
+    .sidebar,
+
+    .topbar,
+
+    .inventory-toolbar,
+
+    .pagination-container,
+
+    .dashboard-footer{
+
+        display:none !important;
+
+    }
+
+    .dashboard-content{
+
+        width:100%;
+
+        margin:0;
+
+        padding:0;
+
+    }
+
+    .dashboard-card{
+
+        box-shadow:none;
+
+        border:1px solid #D1D5DB;
+
+        margin-bottom:20px;
+
+        break-inside:avoid;
+
+    }
+
+    .reports-table{
+
+        width:100%;
+
+        min-width:100%;
+
+    }
+
+}
